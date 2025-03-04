@@ -1,0 +1,116 @@
+/* Center the main container */
+.p-6.max-w-4xl.mx-auto,
+.p-6.max-w-lg.mx-auto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.evidence-store-container {
+    background-color: aqua;
+}
+
+/* Responsive table container */
+.overflow-x-auto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+/* Style for input fields and buttons */
+input,
+button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+/* Table alignment */
+table {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+
+/* Buttons Alignment */
+.mt-4.flex.justify-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Improve button visuals */
+button {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button.variant-secondary {
+    background-color: gray;
+}
+
+button.variant-secondary:hover {
+    background-color: darkgray;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+
+    .p-6.max-w-4xl.mx-auto,
+    .p-6.max-w-lg.mx-auto {
+        padding: 10px;
+    }
+
+    input,
+    button {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+
+.evidence-store-container .go-back-butt {
+    position: fixed;
+    top: 0px;
+    left: 20px;
+    z-index: 2;
+    width: 200px;
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+}
