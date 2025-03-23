@@ -1,0 +1,49 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative; /* Ensures it sits above the content but below others with higher z-index */
+    z-index:-1;
+    
+    /* Ensure it's above other elements */
+}
+
+.banner .slider {
+    width: 200px;
+    height: 250px;
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 30s linear infinite;
+    z-index: 3;
+    /* Increase the z-index */
+}
+
+@keyframes autoRun {
+    from {
+        transform: perspective(1000px) rotateX(-15deg) rotateY(0deg);
+    }
+
+    to {
+        transform: perspective(1000px) rotateX(-15deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(calc((var(--position) - 1) * (360deg / var(--numitem)))) translateZ(550px);
+    z-index: 3;
+    /* Ensure items are above */
+}
+
+.banner .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    /* Keep images on top */
+}
