@@ -15,6 +15,13 @@ const Home = () => {
                 {/* Rolling Card Effect */}
                 <RollingCard />
             </div>
+          
+            {/* Wave Animation at the Bottom */}
+            <div className="wave-container">
+                <div className="wave"></div>
+                <div className="wave"></div>
+                <div className="wave"></div>
+            </div>
         </div>
     );
 };

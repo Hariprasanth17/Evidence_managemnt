@@ -1,116 +1,148 @@
-/* Center the main container */
-.p-6.max-w-4xl.mx-auto,
-.p-6.max-w-lg.mx-auto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+.evidence-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
     padding: 20px;
+    text-align: center;
 }
 
-.evidence-store-container {
-    background-color: aqua;
-}
-
-/* Responsive table container */
-.overflow-x-auto {
-    width: 100%;
+/* Search Bar Styling */
+.search-bar {
     display: flex;
     justify-content: center;
-    overflow-x: auto;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Style for input fields and buttons */
-input,
-button {
-    width: 100%;
-    max-width: 300px;
+.search-bar input {
     padding: 10px;
-    margin: 5px 0;
+    width: 250px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    text-align: center;
+    margin-right: 10px;
 }
 
-/* Table alignment */
-table {
-    width: 100%;
-    max-width: 800px;
-    text-align: center;
-    border-collapse: collapse;
-}
-
-th,
-td {
+.search-bar button {
     padding: 10px;
-    border: 1px solid #ccc;
 }
 
-
-
-/* Buttons Alignment */
-.mt-4.flex.justify-between {
+/* Scrollable Container for Cards */
+.evidence-scroll-container {
     display: flex;
-    justify-content: space-between;
-}
-
-/* Improve button visuals */
-button {
-    cursor: pointer;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    transition: 0.3s;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    max-height: 600px; /* Increased max height for better visibility */
+    overflow-y: auto;
     padding: 10px;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(5, 10, 40, 0.9));
 }
 
-button:hover {
-    background-color: #0056b3;
+/* Evidence Card Styling */
+.evidence-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    width: calc(20% - 15px); /* 5 cards per row in desktop mode */
+    position: relative;
 }
 
-button.variant-secondary {
-    background-color: gray;
+/* Responsive Card Grid */
+@media (max-width: 1200px) {
+    .evidence-card {
+        width: calc(33.33% - 15px); /* 3 cards per row for smaller screens */
+    }
 }
 
-button.variant-secondary:hover {
-    background-color: darkgray;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
-
-    .p-6.max-w-4xl.mx-auto,
-    .p-6.max-w-lg.mx-auto {
-        padding: 10px;
+    .evidence-card {
+        width: calc(50% - 15px); /* 2 cards per row for tablets */
     }
-
-    input,
-    button {
-        max-width: 100%;
-    }
-
-    table {
-        font-size: 14px;
-    }
-}
-
-.evidence-store-container .go-back-butt {
-    position: fixed;
-    top: 0px;
-    left: 20px;
-    z-index: 2;
-    width: 200px;
 }
 
 @media (max-width: 480px) {
-    table {
-        font-size: 12px;
+    .evidence-card {
+        width: 100%; /* 1 card per row for mobile */
     }
+}
 
-    th,
-    td {
-        padding: 5px;
-    }
+.evidence-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.evidence-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* File Preview Styling */
+.evidence-files {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.file-preview img,
+.file-preview video {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.file-preview a {
+    text-decoration: none;
+    color: blue;
+}
+
+/* Buttons Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* Edit and Delete Button */
+button {
+    padding: 8px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.edit-button {
+    background-color:rgba(22, 162, 73, 0.9);
+    color: black;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #5c0606;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.save-butt{
+    background-color:rgba(26, 147, 71, 0.9);
+
+}
+/* No Evidence Message */
+.no-evidence {
+    color: red;
+    font-weight: bold;
 }

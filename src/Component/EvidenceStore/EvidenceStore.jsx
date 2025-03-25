@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Input } from "../../Component/Input/Input";
 import { Button } from "../../Component/Button/Button";
 import "./EvidenceStore.css";
@@ -155,7 +155,7 @@ const EvidenceStore = () => {
                         </div>
                         <div className="flex flex-col gap-2 d-flex flex-column align-items-center">
                             <Button onClick={addEvidence} className="w-full btn btn-success">Add Evidence</Button>
-                            <Button variant="secondary" onClick={goToEvidencePage} className="w-full">View All Evidence</Button>
+                            <Link to="/evidence/list" variant="secondary" onClick={goToEvidencePage} className="w-full">View All Evidence</Link>
                         </div>
                     </div>
                 </div>

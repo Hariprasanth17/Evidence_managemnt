@@ -1,0 +1,282 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Page Background */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Moves login container to the top */
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #e4e6ea, #041231);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Wave Background */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+    /* Keeps wave in background */
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(5, 10, 40, 0.9), rgba(15, 25, 60, 0.9));
+}
+
+.navbar-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 450px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease-in-out;
+    position: relative;
+    z-index: 10;
+    /* Ensures login form is above the wave */
+    margin-top: 50px;
+    /* Adjust this for positioning */
+}
+
+/* Login Title */
+.login-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Form Wrapper */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Common Styling for Inputs & Buttons */
+.input-container,
+.login-button {
+    width: 100%;
+}
+
+/* Select Dropdown */
+.login-select {
+    width: 100%;
+    height: 50px;
+    padding: 14px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.login-select:focus {
+    border-color: #667eea;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+}
+
+/* Input Fields */
+.input-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+/* Input Icons */
+.icon {
+    position: absolute;
+    left: 12px;
+    color: #667eea;
+    font-size: 18px;
+}
+
+/* Input Field Styling */
+.login-input {
+    width: 100%;
+    height: 50px;
+    padding: 14px 14px 14px 40px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+}
+
+.login-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
+}
+
+/* Floating Labels */
+.input-container label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #777;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Move Label Up When Focused */
+.login-input:focus~label,
+.login-input:valid~label {
+    top: 5px;
+    left: 12px;
+    font-size: 14px;
+    color: #667eea;
+    background: white;
+    padding: 0 5px;
+}
+
+/* Password Toggle Icon */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #667eea;
+}
+
+/* Error Message */
+.error-text {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Button */
+.login-button {
+    height: 50px;
+    background: rgba(5, 10, 40, 0.9);
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.login-button:hover {
+    background: rgba(15, 25, 60, 0.9);
+}
+
+.login-button:active {
+    transform: scale(0.95);
+}
+
+/* Responsive Styling */
+@media screen and (min-width: 768px) {
+    .login-container {
+        max-width: 520px;
+        padding: 40px;
+    }
+
+    .login-input,
+    .login-select,
+    .login-button {
+        width: 100%;
+        height: 55px;
+        padding: 18px;
+        font-size: 18px;
+    }
+}
+
+/* pop up */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-button {
+    background: rgba(5, 10, 40, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-button:hover {
+    background: #0056b3;
+}
+
+.popup-close {
+    background-color: #5c0606;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.popup-close:hover {
+    background: darkred;
+}

@@ -42,17 +42,21 @@
 /* Animated Background */
 @keyframes navbarGlow {
     0% {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        background: linear-gradient(135deg, rgba(5, 10, 40, 0.9), rgba(15, 25, 60, 0.9)); /* Ultra Dark Blue */
     }
 
     50% {
-        background: linear-gradient(135deg, #2563eb, #1e3a8a);
+        background: linear-gradient(135deg, rgba(15, 25, 60, 0.9), rgba(5, 10, 40, 0.9)); /* Reverse Dark Blue */
     }
 
     100% {
-        background: linear-gradient(135deg, #1e3a8a, #2563eb);
+        background: linear-gradient(135deg, rgba(5, 10, 40, 0.9), rgba(15, 25, 60, 0.9)); /* Loop Back */
     }
 }
+
+
+
+
 
 .navbar {
     animation: navbarGlow 5s infinite alternate;

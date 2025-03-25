@@ -1,0 +1,141 @@
+/* Body Container */
+.body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #e4e6ea, #041231);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Signup Form Container */
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    width: 450px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Form Title */
+.signup-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Row for 2 Inputs */
+.row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    flex-direction: column;
+   width: 100%;
+   flex: 1;
+}
+
+/* Input Fields */
+.signup-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.signup-input:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+/* Password Input with Eye Icon */
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+}
+
+.password-toggle:hover {
+    color: #000;
+}
+
+/* Signup Button */
+.signup-button {
+    width: 100%;
+    height: 50px;
+    background: rgba(5, 10, 40, 0.9);
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.signup-button:hover {
+    background-color:rgba(8, 19, 80, 0.9);
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+/* ===== Wave Background Animation ===== */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 10em;
+    bottom: 0;
+    left: 0;
+    border-radius: 100% 100% 0 0;
+    opacity: 0.8;
+    animation: wave 8s linear infinite;
+}
+
+.wave1 { background: rgba(5, 10, 40, 0.9); }
+.wave2 { bottom: -1.5em; background: rgba(15, 25, 60, 0.8); animation: wave 10s linear reverse infinite; }
+.wave3 { bottom: -3em; background: rgba(25, 45, 80, 0.7); animation: wave 12s linear infinite; }
+
+@keyframes wave {
+    0% { transform: translateX(0%); }
+    50% { transform: translateX(-25%); }
+    100% { transform: translateX(0%); }
+}
